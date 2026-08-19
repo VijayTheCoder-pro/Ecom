@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\blogs;
+use App\Models\Blogs;
 use Illuminate\Http\Request;
 
 class BlogsController extends Controller
@@ -44,7 +44,7 @@ class BlogsController extends Controller
      * @param  \App\Models\blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function show(blogs $blogs)
+    public function show(Blogs $blogs)
     {
         //
     }
@@ -55,7 +55,7 @@ class BlogsController extends Controller
      * @param  \App\Models\blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function edit(blogs $blogs)
+    public function edit(Blogs $blogs)
     {
         //
     }
@@ -67,7 +67,7 @@ class BlogsController extends Controller
      * @param  \App\Models\blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, blogs $blogs)
+    public function update(Request $request, Blogs $blogs)
     {
         //
     }
@@ -78,7 +78,7 @@ class BlogsController extends Controller
      * @param  \App\Models\blogs  $blogs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(blogs $blogs)
+    public function destroy(Blogs $blogs)
     {
         //
     }

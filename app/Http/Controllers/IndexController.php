@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\index;
+use App\Models\Index;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -44,7 +44,7 @@ class IndexController extends Controller
      * @param  \App\Models\index  $index
      * @return \Illuminate\Http\Response
      */
-    public function show(index $index)
+    public function show(Index $index)
     {
         //
     }
@@ -55,7 +55,7 @@ class IndexController extends Controller
      * @param  \App\Models\index  $index
      * @return \Illuminate\Http\Response
      */
-    public function edit(index $index)
+    public function edit(Index $index)
     {
         //
     }
@@ -67,7 +67,7 @@ class IndexController extends Controller
      * @param  \App\Models\index  $index
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, index $index)
+    public function update(Request $request, Index $index)
     {
         //
     }
@@ -78,7 +78,7 @@ class IndexController extends Controller
      * @param  \App\Models\index  $index
      * @return \Illuminate\Http\Response
      */
-    public function destroy(index $index)
+    public function destroy(Index $index)
     {
         //
     }

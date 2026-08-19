@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\privacy;
+use App\Models\Privacy;
 use Illuminate\Http\Request;
 
 class PrivacyController extends Controller
@@ -44,7 +44,7 @@ class PrivacyController extends Controller
      * @param  \App\Models\privacy  $privacy
      * @return \Illuminate\Http\Response
      */
-    public function show(privacy $privacy)
+    public function show(Privacy $privacy)
     {
         //
     }
@@ -55,7 +55,7 @@ class PrivacyController extends Controller
      * @param  \App\Models\privacy  $privacy
      * @return \Illuminate\Http\Response
      */
-    public function edit(privacy $privacy)
+    public function edit(Privacy $privacy)
     {
         //
     }
@@ -67,7 +67,7 @@ class PrivacyController extends Controller
      * @param  \App\Models\privacy  $privacy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, privacy $privacy)
+    public function update(Request $request, Privacy $privacy)
     {
         //
     }
@@ -78,7 +78,7 @@ class PrivacyController extends Controller
      * @param  \App\Models\privacy  $privacy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(privacy $privacy)
+    public function destroy(Privacy $privacy)
     {
         //
     }

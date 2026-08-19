@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\career;
+use App\Models\Career;
 use Illuminate\Http\Request;
 
 class CareerController extends Controller
@@ -44,7 +44,7 @@ class CareerController extends Controller
      * @param  \App\Models\career  $career
      * @return \Illuminate\Http\Response
      */
-    public function show(career $career)
+    public function show(Career $career)
     {
         //
     }
@@ -55,7 +55,7 @@ class CareerController extends Controller
      * @param  \App\Models\career  $career
      * @return \Illuminate\Http\Response
      */
-    public function edit(career $career)
+    public function edit(Career $career)
     {
         //
     }
@@ -67,7 +67,7 @@ class CareerController extends Controller
      * @param  \App\Models\career  $career
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, career $career)
+    public function update(Request $request, Career $career)
     {
         //
     }
@@ -78,7 +78,7 @@ class CareerController extends Controller
      * @param  \App\Models\career  $career
      * @return \Illuminate\Http\Response
      */
-    public function destroy(career $career)
+    public function destroy(Career $career)
     {
         //
     }

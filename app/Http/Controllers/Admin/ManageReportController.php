@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\models\admin\manage_report;
+use App\Models\Admin\ManageReport;
 
-class manage_reportController extends Controller
+class ManageReportController extends Controller
 {
     /**
      * Display a listing of the resource.

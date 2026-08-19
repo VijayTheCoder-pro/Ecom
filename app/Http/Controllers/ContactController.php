@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contact;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 // use app\Models\contactModel;
 
@@ -54,7 +54,7 @@ class ContactController extends Controller
             'message'=>$request->message  
         ];
         // create data orm model
-        contact::create($data); 
+        Contact::create($data); 
         return redirect('/contact')->with('success','Thank for contact with us, we will contact you soon🙏');
     }
 
@@ -64,7 +64,7 @@ class ContactController extends Controller
      * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(contact $contact)
+    public function show(Contact $contact)
     {
         // contact::all();
         // return redirect('/admin-contanct','data'=>$data);
@@ -76,7 +76,7 @@ class ContactController extends Controller
      * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(contact $contact)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -88,7 +88,7 @@ class ContactController extends Controller
      * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, contact $contact)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -99,7 +99,7 @@ class ContactController extends Controller
      * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contact $contact)
+    public function destroy(Contact $contact)
     {
         //
     }

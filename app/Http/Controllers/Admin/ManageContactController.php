@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\contact;
+use App\Models\Contact;
 
-class manage_contactController extends Controller
+class ManageContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -49,7 +49,7 @@ class manage_contactController extends Controller
     public function show()
     {
         
-    $data = contact::all();
+    $data = Contact::all();
 
     return view('admin.manage-contact', compact('data'));
 
@@ -86,7 +86,7 @@ class manage_contactController extends Controller
      */
     public function destroy($id)
     {
-        $delete = contact::findOrFail($id);
+        $delete = Contact::findOrFail($id);
         $delete->delete();
         // return redirect()->back();
         // return redirect('/admin-manage-contact')->with('del','Data Deleted Successfully');

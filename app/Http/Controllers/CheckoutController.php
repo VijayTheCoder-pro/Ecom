@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\checkout;
+use App\Models\Checkout;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -44,7 +44,7 @@ class CheckoutController extends Controller
      * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function show(checkout $checkout)
+    public function show(Checkout $checkout)
     {
         //
     }
@@ -55,7 +55,7 @@ class CheckoutController extends Controller
      * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function edit(checkout $checkout)
+    public function edit(Checkout $checkout)
     {
         //
     }
@@ -67,7 +67,7 @@ class CheckoutController extends Controller
      * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, checkout $checkout)
+    public function update(Request $request, Checkout $checkout)
     {
         //
     }
@@ -78,7 +78,7 @@ class CheckoutController extends Controller
      * @param  \App\Models\checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function destroy(checkout $checkout)
+    public function destroy(Checkout $checkout)
     {
         //
     }

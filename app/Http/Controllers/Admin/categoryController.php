@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\models\Admin\category;
+use App\Models\Admin\Category;
 use App\Http\Controllers\Controller;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class categoryController extends Controller
      */
     public function index()
     {
-        $data = category::all();
+        $data = Category::all();
 
         return view('admin.category', compact('data'));
     }
@@ -47,7 +47,7 @@ class categoryController extends Controller
             'status' => $request->status
         ];
         // dd($data);
-        category::create($data);
+        Category::create($data);
         // dd($category);
         // dd("Store method called");
 
@@ -84,7 +84,7 @@ class categoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = category::findOrFail($id);
+        $category = Category::findOrFail($id);
         
         $category->catname = $request->catname;
         $category->status = $request->status;
@@ -101,7 +101,7 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        $delete = category::findOrFail($id);
+        $delete = Category::findOrFail($id);
         $delete->delete();
 
         return redirect()->route('category')->with('del', 'Category Deleted Successfully');

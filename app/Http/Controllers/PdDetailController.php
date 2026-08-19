@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
-use App\models\Admin\manage_product;
-class manage_productController extends Controller
+
+class PdDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class manage_productController extends Controller
      */
     public function index()
     {
-        return view('admin.manage_product');
+        return view('products-details');
     }
 
     /**
@@ -41,10 +41,10 @@ class manage_productController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\pd_details  $pd_details
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProductDetail $productDetail)
     {
         //
     }
@@ -52,10 +52,10 @@ class manage_productController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\pd_details  $pd_details
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProductDetail $productDetail)
     {
         //
     }
@@ -64,10 +64,10 @@ class manage_productController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\pd_details  $pd_details
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ProductDetail $productDetail)
     {
         //
     }
@@ -75,10 +75,10 @@ class manage_productController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\pd_details  $pd_details
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProductDetail $productDetail)
     {
         //
     }

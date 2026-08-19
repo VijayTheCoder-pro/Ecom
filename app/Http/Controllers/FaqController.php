@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\faq;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -44,7 +44,7 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(faq $faq)
+    public function show(Faq $faq)
     {
         //
     }
@@ -55,7 +55,7 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(faq $faq)
+    public function edit(Faq $faq)
     {
         //
     }
@@ -67,7 +67,7 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, faq $faq)
+    public function update(Request $request, Faq $faq)
     {
         //
     }
@@ -78,7 +78,7 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(faq $faq)
+    public function destroy(Faq $faq)
     {
         //
     }

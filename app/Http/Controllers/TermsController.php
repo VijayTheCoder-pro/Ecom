@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\terms;
+use App\Models\Terms;
 use Illuminate\Http\Request;
 
 class TermsController extends Controller
@@ -44,7 +44,7 @@ class TermsController extends Controller
      * @param  \App\Models\terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function show(terms $terms)
+    public function show(Terms $terms)
     {
         //
     }
@@ -55,7 +55,7 @@ class TermsController extends Controller
      * @param  \App\Models\terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function edit(terms $terms)
+    public function edit(Terms $terms)
     {
         //
     }
@@ -67,7 +67,7 @@ class TermsController extends Controller
      * @param  \App\Models\terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, terms $terms)
+    public function update(Request $request, Terms $terms)
     {
         //
     }
@@ -78,7 +78,7 @@ class TermsController extends Controller
      * @param  \App\Models\terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function destroy(terms $terms)
+    public function destroy(Terms $terms)
     {
         //
     }

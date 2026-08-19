@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\about;
+use App\Models\About;
 use Illuminate\Http\Request;
-// use App\Models\about;
 
 class AboutController extends Controller
 {
@@ -45,7 +44,7 @@ class AboutController extends Controller
      * @param  \App\Models\about  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(about $about)
+    public function show(About $about)
     {
         //
     }
@@ -56,7 +55,7 @@ class AboutController extends Controller
      * @param  \App\Models\about  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(about $about)
+    public function edit(About $about)
     {
         //
     }
@@ -68,7 +67,7 @@ class AboutController extends Controller
      * @param  \App\Models\about  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, about $about)
+    public function update(Request $request, About $about)
     {
         //
     }
@@ -79,7 +78,7 @@ class AboutController extends Controller
      * @param  \App\Models\about  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(about $about)
+    public function destroy(About $about)
     {
         //
     }

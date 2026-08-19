@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\pd_details;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PdDetailsController extends Controller
+class ManageUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PdDetailsController extends Controller
      */
     public function index()
     {
-        return view('products-details');
+        return view('admin.manage_user');
     }
 
     /**
@@ -41,10 +41,10 @@ class PdDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\pd_details  $pd_details
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(pd_details $pd_details)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class PdDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\pd_details  $pd_details
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(pd_details $pd_details)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class PdDetailsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pd_details  $pd_details
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pd_details $pd_details)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class PdDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\pd_details  $pd_details
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pd_details $pd_details)
+    public function destroy($id)
     {
         //
     }
