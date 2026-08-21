@@ -95,4 +95,7 @@ Route::post('/admin-category/update/{id}',[CategoryController::class,'update'])-
 
 Route::get('/admin-manage-user',[ManageUserController::class,'index'])->name('manage_users');
 Route::get('/admin-manage-report',[ManageReportController::class,'index'])->name('manage_report');
+
 Route::get('/admin-manage-product',[ManageProductController::class,'index'])->name('manage_product');
+Route::post('/admin-manage-product',[ManageProductController::class,'store'])->name('manage_product');
+// Route::post('/admin-manage-product',[ManageProductController::class,'store'])->name('manage_product');

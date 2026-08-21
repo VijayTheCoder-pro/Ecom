@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\ManageProduct;
+use Illuminate\Auth\Events\Validated;
+
 class ManageProductController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class ManageProductController extends Controller
      */
     public function index()
     {
-        return view('admin.manage_product');
+        $data = ManageProduct::all();
+        return view('admin.manage_product', compact('data'));
     }
 
     /**
@@ -35,7 +38,31 @@ class ManageProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Pname' => 'required',
+            'Pdescription' => 'required',
+            'category' => 'required',
+            'price' => 'required',
+            'oprice' => 'required',
+            'stock' => 'required',
+            'status' => 'required'
+
+        ]);
+
+
+        $data = [
+            'image' => $request->image,
+            'Pname' => $request->Pname,
+            'Pdescription' => $request->Pdescription,
+            'category' => $request->category,
+            'price' => $request->price,
+            'oprice' => $request->oprice,
+            'stock' => $request->stock,
+            'status' => $request->status
+        ];
+        ManageProduct::create($data);
+
+        return redirect()->route('manage_product')->with('success', 'Product created successfully ');
     }
 
     /**
