@@ -98,4 +98,5 @@ Route::get('/admin-manage-report',[ManageReportController::class,'index'])->name
 
 Route::get('/admin-manage-product',[ManageProductController::class,'index'])->name('manage_product');
 Route::post('/admin-manage-product',[ManageProductController::class,'store'])->name('manage_product');
-// Route::post('/admin-manage-product',[ManageProductController::class,'store'])->name('manage_product');
+Route::post('/admin-manage-product/{id}',[ManageProductController::class,'edit'])->name('manage_product_edit');
+Route::get('/admin-manage-product/del{id}',[ManageProductController::class,'destroy'])->name('manage_product_delete');
