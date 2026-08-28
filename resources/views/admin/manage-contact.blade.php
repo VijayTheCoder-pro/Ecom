@@ -214,7 +214,7 @@
                             </table>
 
                         </div>
-
+                        
                     </div>
 
                     <div class="card-footer bg-white d-flex justify-content-between align-items-center">
