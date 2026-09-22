@@ -146,7 +146,7 @@
                         <div class="app-card app-card-stat shadow-sm h-100">
                             <div class="app-card-body p-3 p-lg-4">
                                 <h4 class="stats-type mb-1">Total Products</h4>
-                                <div class="stats-figure">{{ $data->count('id') }}</div>
+                                <div class="stats-figure">{{ $data->count() }}</div>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                         <div class="app-card app-card-stat shadow-sm h-100">
                             <div class="app-card-body p-3 p-lg-4">
                                 <h4 class="stats-type mb-1">In Stock</h4>
-                                <div class="stats-figure">{{$data->sum('stock')}}</div>
+                                <div class="stats-figure">{{ $data->sum('stock') }}</div>
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                         <div class="app-card app-card-stat shadow-sm h-100">
                             <div class="app-card-body p-3 p-lg-4">
                                 <h4 class="stats-type mb-1">Out of Stock</h4>
-                                <div class="stats-figure">12</div>
+                                <div class="stats-figure">{{ $data->where('stock', '<', 1)->count() }}</div>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                         <div class="app-card app-card-stat shadow-sm h-100">
                             <div class="app-card-body p-3 p-lg-4">
                                 <h4 class="stats-type mb-1">Categories</h4>
-                                <div class="stats-figure">{{$data->count('category')}}</div>
+                                <div class="stats-figure">{{ $category_id->count() }}</div>
                             </div>
                         </div>
                     </div>
@@ -188,10 +188,10 @@
                                 <label class="form-label">Category</label>
                                 <select name="category" class="form-select">
                                     <option value="">All Categories</option>
-                                    <option value="electronics">Electronics</option>
-                                    <option value="fashion">Fashion</option>
-                                    <option value="home">Home & Kitchen</option>
-                                    <option value="mobiles">Mobiles</option>
+                                    @foreach ($category_id as $row)
+                                        <option value="{{ $row->id }}">{{ $row->catname }}</option>
+                                    @endforeach
+
                                 </select>
                             </div>
                             <div class="col-12 col-md-3">
@@ -234,13 +234,13 @@
                                     @foreach ($data as $row)
                                         <tr>
 
-                                            <td>{{ $row->id }}</td>
+                                            <td>{{ $loop->index + 1}}</td>
                                             <td>
-                                                <img src="{{ $row->image }}" alt="product" width="45" height="45"
-                                                    style="object-fit: cover; border-radius: 8px;">
+                                                <img src="{{ asset($row->image) }}" alt="product" width="45"
+                                                    height="45" style="object-fit: cover; border-radius: 8px;">
                                             </td>
                                             <td class="fw-medium">{{ $row->Pname }}</td>
-                                            <td>{{ $row->category }}</td>
+                                            <td>{{ $row->catname }}</td>
                                             <td>
                                                 <span class="fw-semibold">₹{{ $row->price }}</span>
                                                 <span class="text-muted text-decoration-line-through ms-1"
@@ -266,7 +266,7 @@
                                                     Edit
                                                 </button>
                                                 {{-- </a> --}}
-                                                <a href="/admin-manage-product/del{{ $row->id }}">
+                                                <a href="/admin-manage-product/del/{{ $row->id }}">
                                                     <button type="button" class="btn btn-sm btn-danger"
                                                         onclick="return confirm('Are you sure to delete ?')">Delete</button>
                                                 </a>
@@ -302,19 +302,13 @@
                                                                 </div>
                                                                 <div class="col-12 col-md-6">
                                                                     <label class="form-label">Category</label>
-                                                                    <select name="category" class="form-select">
-                                                                        <option
-                                                                            value="electronics"{{ $row->category == 'electronics' ? 'selected' : '' }}>
-                                                                            Electronics</option>
-                                                                        <option
-                                                                            value="fashion"{{ $row->category == 'fashion' ? 'selected' : '' }}>
-                                                                            Fashion</option>
-                                                                        <option
-                                                                            value="home"{{ $row->category == 'home' ? 'selected' : '' }}>
-                                                                            Home & Kitchen</option>
-                                                                        <option value="mobiles"
-                                                                            {{ $row->category == 'mobiles' ? 'selected' : '' }}>
-                                                                            Mobiles</option>
+                                                                    <select name="category_id" class="form-select">
+                                                                        @foreach ($category_id as $category)
+                                                                            <option
+                                                                                value="{{ $category->id }}"{{ $row->category_id == $category->id ? 'selected' : '' }}>
+                                                                                {{ $category->catname }}</option>
+                                                                        @endforeach
+
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 col-md-6">
@@ -340,8 +334,8 @@
                                                                 <div class="col-6 col-md-3">
                                                                     <label class="form-label">Status</label>
                                                                     <select name="status" class="form-select">
-                                                                        <option
-                                                                            value="active"{{ $row->status == 'active' ? 'selected' : '' }}>
+                                                                        <option value="active"
+                                                                            {{ $row->status == 'active' ? 'selected' : '' }}>
                                                                             Active</option>
                                                                         <option value="draft"
                                                                             {{ $row->status == 'draft' ? 'selected' : '' }}>
@@ -383,7 +377,7 @@
     <div class="modal fade" id="addProductModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form method='post' enctype="multipart/form-data">
+                <form method='post' action="{{ route('manage_product') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title">Add New Product</h5>
@@ -404,11 +398,10 @@
 
                             <div class="col-12 col-md-6">
                                 <label class="form-label">Category</label>
-                                <select name="category" class="form-select">
-                                    <option value="electronics">Electronics</option>
-                                    <option value="fashion">Fashion</option>
-                                    <option value="home">Home & Kitchen</option>
-                                    <option value="mobiles">Mobiles</option>
+                                <select name="category_id" class="form-select">
+                                    @foreach ($category_id as $category)
+                                        <option value="{{ $category->id }}">{{ $category->catname }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-12 col-md-6">
@@ -439,7 +432,7 @@
 
                             <div class="col-12">
                                 <label class="form-label">Product Images</label>
-                                <input type="file" name="image" class="form-control" multiple>
+                                <input type="file" name="image" class="form-control">
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Index;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -14,7 +15,16 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('/');
+        $category_id = DB::table('manage_categories')->get();
+
+        $data = DB::table('products')
+            ->join('manage_categories', 'manage_categories.id', '=', 'products.category_id')
+            ->select('products.*', 'manage_categories.catname')
+            ->get();
+
+        $activeCategory = null;
+
+        return view('index', compact('data', 'category_id', 'activeCategory'));
     }
 
     /**
@@ -44,9 +54,19 @@ class IndexController extends Controller
      * @param  \App\Models\index  $index
      * @return \Illuminate\Http\Response
      */
-    public function show(Index $index)
+    public function show($id)
     {
-        //
+        $category_id = DB::table('manage_categories')->get();
+
+        $activeCategory = DB::table('manage_categories')->where('id', $id)->first();
+
+        $data = DB::table('products')
+            ->join('manage_categories', 'manage_categories.id', '=', 'products.category_id')
+            ->select('products.*', 'manage_categories.catname')
+            ->where('products.category_id', $id)
+            ->get();
+
+        return view('index', compact('category_id', 'data', 'activeCategory'));
     }
 
     /**

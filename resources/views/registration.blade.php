@@ -23,7 +23,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ URL('/registration') }}">
                 @csrf
 
                 <div class="mb-4">
@@ -84,7 +84,7 @@
 
             <p class="text-center text-gray-500 text-sm mt-6">
                 Already have an account?
-                <a href="{{ route('login') }}" class="text-green-600 font-semibold hover:underline">Login here</a>
+                <a href="{{ URL('/login') }}" class="text-green-600 font-semibold hover:underline">Login here</a>
             </p>
 
         </div>

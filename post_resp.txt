@@ -1,0 +1,23 @@
+HTTP/1.1 302 Found
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.3.31
+Cache-Control: no-cache, private
+Date: Mon, 14 Sep 2026 05:06:29 GMT
+Location: http://127.0.0.1:8000/admin-index
+Content-Type: text/html; charset=utf-8
+Set-Cookie: XSRF-TOKEN=eyJpdiI6IncwWDJNQ3F3SkNBemFNRWVZblgzK2c9PSIsInZhbHVlIjoiVkJJVTlDcTczNG1Id1k0RUhHK2kzOGhIUmt2K0ROL1BTNk5IMUdkK2duWkNycWlhZmd3ZzFHSk5pWXFHYzhwYlpGZCt6YWtZYzhtV2E5eVRvMjVaMDBlMEUwMVM1S0JKT05WS2FDQkFSNE1aMmRGMEx5VFM4M3Jxck43ckR2UjgiLCJtYWMiOiJmNTJhOGU1M2U1YTcwMWQ5MmVjYzc4YjIxMGU1MGM1OTY2NGE2M2EwZTI3NmMzNmM0YTdjMmQ5ZTQwOGVmMzNmIiwidGFnIjoiIn0%3D; expires=Mon, 14 Sep 2026 07:06:29 GMT; Max-Age=7200; path=/; samesite=lax
+Set-Cookie: laravel_session=eyJpdiI6ImlSYlNMYXNMd2ZSS2dQSHJQcTR3Znc9PSIsInZhbHVlIjoibHFSSHNtWjZEYUI1czZUQ2FXWHhNN3kxTm1oWHJWM3Q0VmR0UHJQS1lseGdBK3h3RWc4TmY0MVhkK0dlcHVZUkYzTGZkWUVGREx0WWxRRzZKVUFIelY3WEpYQXNaUENmNXBHaGorNVlxcituZWZ6SEt5UFV3OWg1QlYxSFBnZEsiLCJtYWMiOiJjMGRjYTcyOWQ0Nzg5MjI2ZmUzMzc5NzM0YmY4ZGRhNzViNjU3ZGM5MzkxNzdlNzVhZjhlYjU0NjQzZjVmMTMzIiwidGFnIjoiIn0%3D; expires=Mon, 14 Sep 2026 07:06:29 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="0;url='http://127.0.0.1:8000/admin-index'" />
+
+        <title>Redirecting to http://127.0.0.1:8000/admin-index</title>
+    </head>
+    <body>
+        Redirecting to <a href="http://127.0.0.1:8000/admin-index">http://127.0.0.1:8000/admin-index</a>.
+    </body>
+</html>

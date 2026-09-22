@@ -247,6 +247,9 @@
                 </nav><!--//app-nav-->
 
                 {{-- ============ Sidebar Footer: Logged-in user card ============ --}}
+
+            @if(Auth::guard('admin')->check())
+                
                 <div class="app-sidepanel-footer p-3 border-top">
                     <div class="d-flex align-items-center">
                         <img src="assets/images/profiles/profile-1.png" alt="admin"
@@ -255,14 +258,15 @@
 
                         <div class="flex-grow-1" style="min-width: 0;">
                             <div class="fw-semibold text-truncate" style="font-size: 0.9rem;">
-                                {{ auth()->user()->name ?? 'Admin' }}
+                                {{ Auth::guard('admin')->user()->name }}
                             </div>
                             <div class="text-muted text-truncate" style="font-size: 0.75rem;">
-                                {{ auth()->user()->email ?? 'admin@example.com' }}
+                                {{ Auth::guard('admin')->user()->email  }}
                             </div>
                         </div>
 
-                        <a href="#" class="text-muted ms-2" title="Logout">
+                        <a href="{{url('admin-logout')}}" class="text-muted ms-2" title="Logout">
+            @endif
                             <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"

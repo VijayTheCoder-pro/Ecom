@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+
+
+
 // use app\Models\contactModel;
 
 class ContactController extends Controller
@@ -55,6 +61,8 @@ class ContactController extends Controller
         ];
         // create data orm model
         Contact::create($data); 
+        // Mail::to('amirbanda101@gmail.com')->send(new ContactMail($data));
+        Mail::to(env('MAIL_USERNAME'))->send(new ContactMail($data));
         return redirect('/contact')->with('success','Thank for contact with us, we will contact you soon🙏');
     }
 

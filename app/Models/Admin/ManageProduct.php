@@ -9,7 +9,7 @@ class ManageProduct extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image','Pname','Pdescription','category','brand','price','oprice','stock','status'];
+    protected $fillable = ['image','Pname','Pdescription','category_id','brand','price','oprice','stock','status'];
 
     protected $table = 'products';
 }

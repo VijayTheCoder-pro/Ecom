@@ -182,7 +182,7 @@
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Subject</th>
-                                        <th>Status</th>
+                                        <th>message</th>
                                         <th>Date</th>
                                         <th width="100">Action</th>
                                     </tr>
@@ -191,12 +191,12 @@
                                 <tbody>
                                     @foreach ($data as $row)
                                         <tr>
-                                            <td>{{ $row->id }}</td>
+                                            <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $row->fullname }}</td>
                                             <td>{{ $row->email }}</td>
                                             <td>{{ $row->phone }}</td>
                                             <td>{{ $row->subject }}</td>
-                                            <td><span class="badge bg-success">New</span></td>
+                                            <td>{{$row->message}}</span></td>
                                             <td>{{ $row->created_at->format('d-m-y') }}</td>
                                             <td>
                                                 <a href="/admin-manage-contact/delete/{{ $row->id }}">

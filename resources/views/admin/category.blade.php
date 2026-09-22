@@ -48,7 +48,7 @@
                                 <tr>
 
 
-                                    <td>{{ $row->id }}</td>
+                                    <td>{{ $loop->index + 1 }}</td>
                                     <td class="fw-medium" >{{ $row->catname }}</td>
                                     <td>
                                         @if ($row->status == 'Active')
